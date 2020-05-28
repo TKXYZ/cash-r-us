@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.cash_r_us</groupId>
-	<artifactId>P1_Cash_R_Us</artifactId>
+	<artifactId>Cash_R_Us</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>P1_Cash_R_Us Maven Webapp</name>
+	<name>Cash_R_Us Maven Webapp</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -36,23 +36,30 @@
 			<version>1.2.17</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
-		<dependency>
-			<groupId>com.oracle.jdbc</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>12.2.0.1</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind (JSON Parser)-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.10.2</version>
 		</dependency>
+
+		<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 &ndash;&gt;-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.oracle.jdbc</groupId>-->
+		<!--			<artifactId>ojdbc8</artifactId>-->
+		<!--			<version>12.2.0.1</version>-->
+		<!--		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8 -->
+		<dependency>
+			<groupId>com.oracle.ojdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>19.3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>P1_Cash_R_Us</finalName>
+		<finalName>Cash_R_Us</finalName>
 		<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
 		<pluginManagement>
 			<plugins>
