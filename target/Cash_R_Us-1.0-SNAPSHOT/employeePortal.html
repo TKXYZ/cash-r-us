@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Portal</title>
+    <title>Employee Portal</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
 <!-- HEADER -->
 <div class="container">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Customer Portal</h1>
+        <h1 class="display-4">Employee Portal</h1>
     </div>
 </div>
 
@@ -33,10 +33,10 @@
 
 <!-- BODY -->
 <div class="container">
-    <!-- VIEW ACCOUNT -->
+    <!-- VIEW ALL ACCOUNTS -->
     <div class="row justify-content-center">
-        <input class="btn btn-success col-8" type="button" id="viewAccountBtn" value="View My Account">
-        <table class="table table-hover table-bordered" id="accountTable" hidden>
+        <input class="btn btn-dark col-8" type="button" id="viewAccountsBtn" value="View All Accounts">
+        <table class="table table-hover table-bordered" id="accountsTable" hidden>
             <!-- Table Head -->
             <thead class="thead-light text-center">
             <tr>
@@ -49,25 +49,21 @@
             </thead>
 
             <!-- Table Body -->
-            <tbody id="singleAccount">
-            <!-- ROW ADDED DYNAMICALLY FROM JSON -->
+            <tbody id="allAccounts">
+            <!-- ROWS ADDED DYNAMICALLY FROM JSON -->
             </tbody>
         </table>
     </div>
 
-    <!-- DEPOSIT -->
+    <!-- VIEW ALL TRANSACTIONS-->
     <div class="row justify-content-center">
-        <input class="btn btn-info col-8" type="button" id="depositBtn" value="Deposit" onclick="window.location.assign('/userDeposit.html')">
-    </div>
-
-    <!-- WITHDRAW -->
-    <div class="row justify-content-center">
-        <input class="btn btn-info col-8" type="button" id="withdrawBtn" value="Withdraw" onclick="window.location.assign('/userWithdraw.html')">
-    </div>
-
-    <!-- TRANSFER -->
-    <div class="row justify-content-center">
-        <input class="btn btn-info col-8" type="button" id="transferBtn" value="Transfer" onclick="window.location.assign('/userTransfer.html')">
+        <input class="btn btn-dark col-8" type="button" id="viewTransactionsBtn" value="View All Transactions">
+        <ul class="container text-center" id="allTransactions" style="list-style: none;" hidden>
+            <li>"$200.00 was <strong>deposited</strong> into <strong>tomnook</strong> on 05/29/2020"</li>
+            <li>"$100.00 was <strong>withdrawn</strong> from <strong>tomnook</strong> on 05/29/2020"</li>
+            <li>"$100.00 was <strong>transferred</strong> from <strong>tomnook</strong> to <strong>johndoe</strong> on 05/29/2020"</li>
+            <!-- ROWS ADDED DYNAMICALLY FROM JSON -->
+        </ul>
     </div>
 
     <br>
@@ -80,8 +76,8 @@
     </div>
 </div>
 
-
-<script type="text/javascript" src="js/customerPortal.js"></script>
+<script type="text/javascript" src="js/employeePortal.js"></script>
+<script type="text/javascript" src="js/logout.js"></script>
 </body>
 
 </html>

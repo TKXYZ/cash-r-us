@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -63,6 +64,7 @@ public class LoginServlet extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("account", dbAccount);
 
+
 					// Routing
 					writer.write("employeePortal.html");
 				} else {
@@ -77,6 +79,7 @@ public class LoginServlet extends HttpServlet {
 				}
 			} else {
 				System.out.println("Credentials DO NOT match DB!");
+				JOptionPane.showMessageDialog(null, "Error, credentials do not match!");
 
 				// Routing
 				writer.write("index.html");

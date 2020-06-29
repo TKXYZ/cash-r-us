@@ -21,8 +21,6 @@ public class DAOImp implements DAO {
 //	Service service = new Service();
 //	DAOImp dao = new DAOImp();
 
-	protected String error = "Internal error, please contact SYSADMIN.";
-
 	// Creates a new account in DB
 	@Override
 	public void createAccount(Account account) throws BusinessException {
@@ -36,8 +34,10 @@ public class DAOImp implements DAO {
 			cs.setString(5, account.getType());
 			cs.execute();
 		} catch (ClassNotFoundException | SQLException e) {
-			log.warn("Account " + account.getUsername() + " already exists!");
-			JOptionPane.showMessageDialog(null, "Account already exists!");
+//			log.warn("Account " + account.getUsername() + " already exists!");
+//			JOptionPane.showMessageDialog(null, "Account already exists!");
+			log.warn("Error, check registration form!");
+			JOptionPane.showMessageDialog(null, "Error, check registration form!");
 		}
 	}
 
@@ -54,7 +54,7 @@ public class DAOImp implements DAO {
 			ps.setString(5, account.getType());
 			ps.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
-			log.error(error);
+			log.error("Internal error, please contact SYSADMIN.");
 		}
 	}
 
@@ -76,7 +76,7 @@ public class DAOImp implements DAO {
 				accountList.add(account); // ..continually add objects into ArrayList
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			log.error(error);
+			log.error("Internal error, please contact SYSADMIN.");
 		}
 		return accountList; // Spits out the now-populated ArrayList
 	}
@@ -97,7 +97,7 @@ public class DAOImp implements DAO {
 				account.setType(rs.getString("type"));
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			log.error(error);
+			log.error("Internal error, please contact SYSADMIN.");
 		}
 		return account;
 	}

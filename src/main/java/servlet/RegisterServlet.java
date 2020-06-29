@@ -38,7 +38,7 @@ public class RegisterServlet extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 
 		// LOCAL ACCOUNT - Jackson ObjectMapper maps JS vars to Java obj
-		Account localAccount = mapper.readValue(request.getReader(), model.Account.class);
+		Account localAccount = mapper.readValue(request.getReader(), model.Account.class); // maps JS object to Java object, based on the Account model
 		System.out.println("Local Account: " + localAccount);
 
 		// Assigns JS vars to Java vars
